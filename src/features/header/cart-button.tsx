@@ -4,7 +4,6 @@ import { Link, usePathname } from "@/shared/i18n/navigation";
 import { cn } from "@/shared/lib/css";
 
 export function CartButton() {
-
   return (
     <HeaderLink href={"/cart"} className="relative">
       <ShoppingBag />
@@ -12,7 +11,7 @@ export function CartButton() {
         12
       </span>
     </HeaderLink>
-  )
+  );
 }
 
 export function HeaderLink({
@@ -35,7 +34,6 @@ export function HeaderLink({
     />
   );
 }
-
 
 export function ShoppingBag({
   className,

@@ -8,7 +8,11 @@ import { ApiSchemas } from "@/shared/api/schema";
 import { CartButton } from "./cart-button";
 import { useIsTablet } from "@/shared/lib/react/use-tablet";
 
-export function AppHeader({ categories }: { categories: ApiSchemas["CategorySchema"][] }) {
+export function AppHeader({
+  categories,
+}: {
+  categories: ApiSchemas["CategorySchema"][];
+}) {
   const [open, setOpen] = React.useState(false);
   const tablet = useIsTablet();
 

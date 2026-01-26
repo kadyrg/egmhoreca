@@ -1,5 +1,13 @@
 {
-    "Home": {
-        "title": "Hello world!"
-    }
+  "Home": {
+    "meta-title": "Hello world!",
+    "meta-description": "Hello world!"
+  },
+  "AppFooter": {
+    "links": "Links",
+    "contacts": "Contacts",
+    "about": "About",
+    "legal": "Legal",
+    "copyright": "Copyright"
+  }
 }

@@ -10,7 +10,6 @@ import { AppHeader } from "@/features/header";
 import { AppFooter } from "@/features/footer";
 import { get_categories } from "@/features/categories/api";
 
-
 const inter = Inter({
   subsets: ["latin"],
 });
