@@ -8,7 +8,7 @@ import { routing } from "@/shared/i18n/routing";
 import { setRequestLocale } from "next-intl/server";
 import { AppHeader } from "@/features/header";
 import { AppFooter } from "@/features/footer";
-import { get_categories } from "@/features/categories/api";
+import { get_categories } from "@/features/categories";
 
 const inter = Inter({
   subsets: ["latin"],

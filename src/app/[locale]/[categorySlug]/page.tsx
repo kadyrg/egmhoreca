@@ -2,7 +2,8 @@ import { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import { cn } from "@/shared/lib/css";
 import { Link } from "@/shared/i18n/navigation";
-import { getSubCategories, getCategory } from "@/features/categories";
+import { getCategory } from "@/features/categories";
+import { getSubCategories } from "@/features/sub-categories";
 
 interface Props {
   params: Promise<{ locale: string; categorySlug: string }>;
