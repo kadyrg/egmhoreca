@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 export async function get_categories(
   locale: string,
 ): Promise<ApiSchemas["CategorySchema"][]> {
-  const res = await fetch(CONFIG.API_BASE_URL + "/api/categories", {
+  const res = await fetch(CONFIG.API_BASE_URL + "/api/categories/", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
