@@ -11,8 +11,8 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        /** Get Categories Endpoint */
-        get: operations["get_categories_endpoint_api_categories__get"];
+        /** Public List */
+        get: operations["public_list_api_categories__get"];
         put?: never;
         post?: never;
         delete?: never;
@@ -21,15 +21,15 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
-    "/api/categories/{category_slug}/": {
+    "/api/categories/{slug}/": {
         parameters: {
             query?: never;
             header?: never;
             path?: never;
             cookie?: never;
         };
-        /** Get Category Title Endpoint */
-        get: operations["get_category_title_endpoint_api_categories__category_slug___get"];
+        /** Public Get */
+        get: operations["public_get_api_categories__slug___get"];
         put?: never;
         post?: never;
         delete?: never;
@@ -45,8 +45,8 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        /** Get Sub Categories Website Endpoint */
-        get: operations["get_sub_categories_website_endpoint_api_sub_categories__get"];
+        /** Public List */
+        get: operations["public_list_api_sub_categories__get"];
         put?: never;
         post?: never;
         delete?: never;
@@ -62,8 +62,8 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        /** Get Products Endpoint Web */
-        get: operations["get_products_endpoint_web_api_products__get"];
+        /** Public List */
+        get: operations["public_list_api_products__get"];
         put?: never;
         post?: never;
         delete?: never;
@@ -103,8 +103,8 @@ export interface components {
             title: string;
             /** Slug */
             slug: string;
-            /** Mainimage */
-            mainImage: string;
+            /** Image */
+            image: string | null;
             /** Price */
             price: string;
         };
@@ -135,7 +135,7 @@ export interface components {
 }
 export type $defs = Record<string, never>;
 export interface operations {
-    get_categories_endpoint_api_categories__get: {
+    public_list_api_categories__get: {
         parameters: {
             query?: never;
             header?: never;
@@ -155,12 +155,12 @@ export interface operations {
             };
         };
     };
-    get_category_title_endpoint_api_categories__category_slug___get: {
+    public_get_api_categories__slug___get: {
         parameters: {
             query?: never;
             header?: never;
             path: {
-                category_slug: string;
+                slug: string;
             };
             cookie?: never;
         };
@@ -186,7 +186,7 @@ export interface operations {
             };
         };
     };
-    get_sub_categories_website_endpoint_api_sub_categories__get: {
+    public_list_api_sub_categories__get: {
         parameters: {
             query?: {
                 category_slug?: string | null;
@@ -217,7 +217,7 @@ export interface operations {
             };
         };
     };
-    get_products_endpoint_web_api_products__get: {
+    public_list_api_products__get: {
         parameters: {
             query?: {
                 sub_category_slug?: string | null;

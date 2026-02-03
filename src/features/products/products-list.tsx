@@ -61,7 +61,7 @@ function ProductCard({
       href={`/${categorySlug}/${product.slug}`}
     >
       <Image
-        src={product.mainImage}
+        src={product.image || ""}
         alt={product.title}
         width={500}
         height={500}
@@ -77,7 +77,7 @@ function ProductCard({
             {product.price} RON
           </div>
         </div>
-        <Button className="font-semibold w-full sm:w-fit sm:h-10 sm:px-6">
+        <Button className="font-semibold w-full sm:w-fit sm:h-10 sm:px-6 rounded-full">
           View
         </Button>
       </div>
