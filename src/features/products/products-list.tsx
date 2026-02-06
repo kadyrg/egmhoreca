@@ -66,7 +66,7 @@ function ProductCard({
         width={500}
         height={500}
         className="aspect-square object-contain h-full w-full p-3"
-        unoptimized={isDev}
+        unoptimized={true}
       />
       <div className="w-full p-[10px] sm:p-3 md:p-4 lg:p-5 gap-2 flex flex-wrap sm:flex-nowrap justify-between items-end">
         <div className="w-full overflow-hidden">
