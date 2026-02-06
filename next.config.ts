@@ -3,6 +3,15 @@ import createNextIntlPlugin from "next-intl/plugin";
 
 const nextConfig: NextConfig = {
   reactCompiler: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "api.egmhoreca.ro",
+        pathname: "/media/**",
+      },
+    ],
+  },
 };
 
 const withNextIntl = createNextIntlPlugin("./src/shared/i18n/request.ts");
