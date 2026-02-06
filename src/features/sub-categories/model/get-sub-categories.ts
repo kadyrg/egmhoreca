@@ -19,6 +19,10 @@ export async function getSubCategories(locale: string, categorySlug: string) {
         "Accept-Language": locale,
         "Content-Type": "application/json",
       },
+      cache: "force-cache",
+      next: {
+        tags: [`${locale}/sub_categories/?category_slug=${categorySlug}`],
+      },
     },
   );
   if (!res.ok) {

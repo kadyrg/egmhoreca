@@ -11,6 +11,10 @@ export async function get_categories(
       "Content-Type": "application/json",
       "Accept-Language": locale,
     },
+    cache: "force-cache",
+    next: {
+      tags: [`${locale}/categories/`],
+    },
   });
   if (!res.ok) {
     return notFound();

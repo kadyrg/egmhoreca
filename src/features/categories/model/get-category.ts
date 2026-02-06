@@ -9,6 +9,10 @@ export async function getCategory(locale: string, slug: string) {
       "Accept-Language": locale,
       "Content-Type": "application/json",
     },
+    cache: "force-cache",
+    next: {
+      tags: [`${locale}/categories/${slug}/`],
+    },
   });
   if (!res.ok) {
     return notFound();
