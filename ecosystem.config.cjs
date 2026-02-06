@@ -7,7 +7,7 @@ module.exports = {
       args: "start -p 3000",
       env: {
         NODE_ENV: "production",
-        API_BASE_URL: "https://api.egmhoreca.ro/website",
+        API_BASE_URL: "http://localhost:8000/website",
       },
     },
   ],
