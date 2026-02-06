@@ -44,5 +44,5 @@ jobs:
             cd /var/www/egmhoreca-web
             npm ci
             npm run build
-            pm2 restart egmhoreca-web --update-env || pm2 start ecosystem.config.js --only egmhoreca-web --update-env
+            pm2 restart egmhoreca-web --update-env || pm2 start ecosystem.config.cjs --only egmhoreca-web --update-env
             pm2 save
