@@ -16,7 +16,7 @@ jobs:
           node-version: 20
           cache: npm
           cache-dependency-path: package-lock.json
-
+      - run: node -v && npm -v
       - run: npm ci
         working-directory: .
       - run: npm run build
