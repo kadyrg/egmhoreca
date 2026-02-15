@@ -1,12 +1,8 @@
 import { Metadata } from "next";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 import { Link } from "@/shared/i18n/navigation";
 import Image from "next/image";
 import { Button } from "@/shared/ui/kit/button";
-
-interface Props {
-  params: Promise<{ locale: string }>;
-}
 
 export type Banner = {
   id: number;
@@ -36,11 +32,7 @@ const subBanners: Banner[] = [
   },
 ];
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale } = await params;
-
-  setRequestLocale(locale);
-
+export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("Home");
 
   return {

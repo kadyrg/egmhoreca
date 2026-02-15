@@ -9,9 +9,7 @@ import { AppHeader } from "@/features/header";
 import { AppFooter } from "@/features/footer";
 import { get_categories } from "@/features/categories";
 
-const inter = Inter({
-  subsets: ["latin"],
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));

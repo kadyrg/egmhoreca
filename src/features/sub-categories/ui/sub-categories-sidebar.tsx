@@ -20,7 +20,7 @@ export function SubCategoriesSidebar({ data }: Props) {
         });
       },
       {
-        rootMargin: "-10% 0px -50% 0px", // Adjust these values as needed for better trigger points
+        rootMargin: "-10% 0px -50% 0px",
         threshold: 0,
       },
     );

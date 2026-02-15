@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { getCategory } from "@/features/categories";
 import {
   getSubCategories,
@@ -17,14 +17,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   setRequestLocale(locale);
 
+  const t = await getTranslations("Category");
+
   const data = await getCategory(locale, categorySlug);
 
   return {
-    title: data.title,
-    description: "",
+    title: t("meta-title", { categoryTitle: data.title }),
+    description: t("meta-description", { categoryTitle: data.title }),
     openGraph: {
-      title: data.title,
-      description: "",
+      title: t("meta-title", { categoryTitle: data.title }),
+      description: t("meta-description", { categoryTitle: data.title }),
     },
   };
 }
