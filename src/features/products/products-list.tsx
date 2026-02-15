@@ -7,7 +7,7 @@ import { Link } from "@/shared/i18n/navigation";
 import Image from "next/image";
 import { Button } from "@/shared/ui/kit/button";
 import { ApiSchemas } from "@/shared/api/schema";
-import { getProducts } from "./model/get-products";
+import { getProducts } from "./model/api";
 
 export async function ProductsList({
   subCategorySlug,
