@@ -16,7 +16,7 @@ export async function getProducts({
         "Accept-Language": locale,
         "Content-Type": "application/json",
       },
-      // cache: "force-cache",
+      cache: "force-cache",
       next: {
         tags: [`${locale}/products?sub_category_slug=${subCategorySlug}`],
       },
