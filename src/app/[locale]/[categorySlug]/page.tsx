@@ -1,9 +1,10 @@
 import { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
-import { cn } from "@/shared/lib/css";
-import { Link } from "@/shared/i18n/navigation";
 import { getCategory } from "@/features/categories";
-import { getSubCategories } from "@/features/sub-categories";
+import {
+  getSubCategories,
+  SubCategoriesSidebar,
+} from "@/features/sub-categories";
 import { ProductsList } from "@/features/products";
 import { Heading3 } from "@/shared/ui/kit/typography";
 
@@ -39,7 +40,11 @@ export default async function CategoryPage({ params }: Props) {
     <section className="flex justify-center max-w-[90rem] mx-auto min-h-screen">
       <div>
         {data.map((item) => (
-          <div key={item.id} className="scroll-offset py-8">
+          <div
+            key={item.id}
+            id={String(item.id)}
+            className="scroll-offset py-8 scroll-mt-24"
+          >
             <div className="px-5">
               <div className="max-w-[90rem] mx-auto">
                 <Heading3 className="my-3">{item.title}</Heading3>
@@ -50,19 +55,7 @@ export default async function CategoryPage({ params }: Props) {
         ))}
       </div>
       <div className="hidden lg:block px-4">
-        <div className="sticky top-11 h-[calc(100vh-44px)] flex flex-col gap-5 justify-center">
-          {data.map((item) => (
-            <Link
-              key={item.id}
-              className={cn(
-                "font-semibold text-foreground/70 hover:text-foreground cursor-pointer transition-all truncate",
-              )}
-              href={`#${item.id}`}
-            >
-              {item.title}
-            </Link>
-          ))}
-        </div>
+        <SubCategoriesSidebar data={data} />
       </div>
     </section>
   );
