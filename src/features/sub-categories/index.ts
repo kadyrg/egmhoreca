@@ -1,1 +1,1 @@
-export { getSubCategories } from "./model/get-sub-categories";
+export { getSubCategories } from "./model/api";

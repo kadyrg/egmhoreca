@@ -10,15 +10,15 @@ export async function getProducts({
   subCategorySlug: string;
 }) {
   const res = await fetch(
-    `${CONFIG.API_BASE_URL}/api/products/?sub_category_slug=${subCategorySlug}`,
+    CONFIG.API_BASE_URL + `/products?sub_category_slug=${subCategorySlug}`,
     {
       headers: {
         "Accept-Language": locale,
         "Content-Type": "application/json",
       },
-      cache: "force-cache",
+      // cache: "force-cache",
       next: {
-        tags: [`${locale}/products/sub_category_slug=${subCategorySlug}`],
+        tags: [`${locale}/products?sub_category_slug=${subCategorySlug}`],
       },
     },
   );

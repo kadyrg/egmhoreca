@@ -4,7 +4,7 @@
  */
 
 export interface paths {
-  "/api/categories/": {
+  "/categories": {
     parameters: {
       query?: never;
       header?: never;
@@ -12,7 +12,7 @@ export interface paths {
       cookie?: never;
     };
     /** Public List */
-    get: operations["public_list_api_categories__get"];
+    get: operations["_public_list_categories_get"];
     put?: never;
     post?: never;
     delete?: never;
@@ -21,7 +21,7 @@ export interface paths {
     patch?: never;
     trace?: never;
   };
-  "/api/categories/{slug}/": {
+  "/categories/{slug}": {
     parameters: {
       query?: never;
       header?: never;
@@ -29,7 +29,7 @@ export interface paths {
       cookie?: never;
     };
     /** Public Get */
-    get: operations["public_get_api_categories__slug___get"];
+    get: operations["_public_get_categories__slug__get"];
     put?: never;
     post?: never;
     delete?: never;
@@ -38,7 +38,7 @@ export interface paths {
     patch?: never;
     trace?: never;
   };
-  "/api/sub_categories/": {
+  "/sub_categories": {
     parameters: {
       query?: never;
       header?: never;
@@ -46,7 +46,7 @@ export interface paths {
       cookie?: never;
     };
     /** Public List */
-    get: operations["public_list_api_sub_categories__get"];
+    get: operations["_public_list_sub_categories_get"];
     put?: never;
     post?: never;
     delete?: never;
@@ -55,7 +55,7 @@ export interface paths {
     patch?: never;
     trace?: never;
   };
-  "/api/products/": {
+  "/products": {
     parameters: {
       query?: never;
       header?: never;
@@ -63,7 +63,7 @@ export interface paths {
       cookie?: never;
     };
     /** Public List */
-    get: operations["public_list_api_products__get"];
+    get: operations["_public_list_products_get"];
     put?: never;
     post?: never;
     delete?: never;
@@ -135,7 +135,7 @@ export interface components {
 }
 export type $defs = Record<string, never>;
 export interface operations {
-  public_list_api_categories__get: {
+  _public_list_categories_get: {
     parameters: {
       query?: never;
       header?: never;
@@ -155,7 +155,7 @@ export interface operations {
       };
     };
   };
-  public_get_api_categories__slug___get: {
+  _public_get_categories__slug__get: {
     parameters: {
       query?: never;
       header?: never;
@@ -186,7 +186,7 @@ export interface operations {
       };
     };
   };
-  public_list_api_sub_categories__get: {
+  _public_list_sub_categories_get: {
     parameters: {
       query?: {
         category_slug?: string | null;
@@ -217,7 +217,7 @@ export interface operations {
       };
     };
   };
-  public_list_api_products__get: {
+  _public_list_products_get: {
     parameters: {
       query?: {
         sub_category_slug?: string | null;

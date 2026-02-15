@@ -7,6 +7,7 @@ import { Button } from "@/shared/ui/kit/button";
 interface Props {
   params: Promise<{ locale: string }>;
 }
+
 export type Banner = {
   id: number;
   image: string;

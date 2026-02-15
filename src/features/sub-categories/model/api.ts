@@ -13,7 +13,7 @@ export type Product = {
 
 export async function getSubCategories(locale: string, categorySlug: string) {
   const res = await fetch(
-    `${CONFIG.API_BASE_URL}/api/sub_categories/?category_slug=${categorySlug}`,
+    CONFIG.API_BASE_URL + `/sub_categories?category_slug=${categorySlug}`,
     {
       headers: {
         "Accept-Language": locale,
@@ -21,7 +21,7 @@ export async function getSubCategories(locale: string, categorySlug: string) {
       },
       cache: "force-cache",
       next: {
-        tags: [`${locale}/sub_categories/?category_slug=${categorySlug}`],
+        tags: [`${locale}/sub_categories?category_slug=${categorySlug}`],
       },
     },
   );

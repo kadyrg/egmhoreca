@@ -9,7 +9,7 @@
     "start": "next start",
     "lint": "eslint",
     "format": "npx prettier -w .",
-    "api": "npx openapi-typescript http://127.0.0.1:8000/website/openapi.json -o ./src/shared/api/schema/generated.ts"
+    "api": "npx openapi-typescript http://127.0.0.1:8000/api/website/openapi.json -o ./src/shared/api/schema/generated.ts"
   },
   "dependencies": {
     "@radix-ui/react-separator": "^1.1.8",

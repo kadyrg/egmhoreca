@@ -1,2 +1,1 @@
-export { getCategory } from "./model/get-category";
-export { get_categories } from "./model/get-categories";
+export { getCategory, get_categories } from "./model/api";
