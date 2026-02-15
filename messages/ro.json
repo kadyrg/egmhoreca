@@ -1,13 +1,27 @@
 {
   "Home": {
-    "meta-title": "Hello world!",
-    "meta-description": "Hello world!"
+    "meta-title": "EGM Horeca",
+    "meta-description": "EGM Horeca Kitchen Equipments"
   },
   "AppFooter": {
-    "links": "Links",
+    "title": "EGM Horeca",
+    "links": {
+      "label": "Links",
+      "home": "Home",
+      "about": "About us",
+      "contact": "Contact us"
+    },
+    "legal": {
+      "label": "Legal",
+      "terms-of-service": "Terms of Service",
+      "privacy-policy": "Privacy Policy"
+    },
     "contacts": "Contacts",
     "about": "About",
-    "legal": "Legal",
-    "copyright": "Copyright"
+    "copyright": "Copyright © {year} {title}. All rights reserved."
+  },
+  "Category": {
+    "meta-title": "{categoryTitle} | EGM Horeca",
+    "meta-description": "{categoryTitle}"
   }
 }
