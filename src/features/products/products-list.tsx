@@ -53,8 +53,6 @@ function ProductCard({
   categorySlug?: string;
   product: ApiSchemas["ProductSchema"];
 }) {
-  const isDev = process.env.NODE_ENV === "development";
-
   return (
     <Link
       className="flex flex-col rounded-3xl overflow-hidden bg-accent"
@@ -66,7 +64,7 @@ function ProductCard({
         width={500}
         height={500}
         className="aspect-square object-contain h-full w-full p-3"
-        unoptimized={isDev}
+        unoptimized
       />
       <div className="w-full p-[10px] sm:p-3 md:p-4 lg:p-5 gap-2 flex flex-wrap sm:flex-nowrap justify-between items-end">
         <div className="w-full overflow-hidden">

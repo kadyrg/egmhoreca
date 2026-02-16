@@ -6,13 +6,8 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "api.egmhoreca.ro",
-        pathname: "/media/**",
-      },
-      {
         protocol: "http",
-        hostname: "localhost",
+        hostname: "127.0.0.1",
         port: "8000",
         pathname: "/media/**",
       },
