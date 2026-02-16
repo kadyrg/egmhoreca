@@ -13,14 +13,14 @@ export async function AppFooter() {
         { label: t("links.home"), link: "/" },
         { label: t("links.about"), link: "/about" },
         { label: t("links.contact"), link: "/contact" },
-      ]
+      ],
     },
     {
       label: t("legal.label"),
       links: [
         { label: t("legal.terms-of-service"), link: "/terms-of-service" },
         { label: t("legal.privacy-policy"), link: "/privacy-policy" },
-      ]
+      ],
     },
   ];
 
