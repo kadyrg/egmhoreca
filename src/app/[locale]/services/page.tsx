@@ -7,6 +7,7 @@ import {
   CarouselItem,
 } from "@/shared/ui/kit/carousel";
 import { Field, FieldGroup, FieldLabel } from "@/shared/ui/kit/field";
+import { Logo } from "@/shared/ui/kit/icons";
 import { Input } from "@/shared/ui/kit/input";
 import {
   InputGroup,
@@ -52,16 +53,7 @@ const data = [
   {
     id: 1,
     title: "Consultanta Personalizata",
-    icon: (
-      <svg
-        id="Layer_1"
-        data-name="Layer 1"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 122.84 102"
-      >
-        <path d="M65.72,0H0v102h122.84V0h-57.12ZM101.27,83.06H21.57v-23.02h79.7v23.02ZM101.27,41.09H21.57v-22.15h79.7v22.15Z" />
-      </svg>
-    ),
+    icon: Logo,
     banner: "/banner1.jpg",
     content: {
       title: "Consultanta Personalizata",
@@ -77,16 +69,7 @@ const data = [
   {
     id: 2,
     title: "Proiectare Profesionala",
-    icon: (
-      <svg
-        id="Layer_1"
-        data-name="Layer 1"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 122.84 102"
-      >
-        <path d="M65.72,0H0v102h122.84V0h-57.12ZM101.27,83.06H21.57v-23.02h79.7v23.02ZM101.27,41.09H21.57v-22.15h79.7v22.15Z" />
-      </svg>
-    ),
+    icon: Logo,
     banner: "/banner1.jpg",
     content: {
       title: "Consultanta Personalizata",
@@ -102,16 +85,7 @@ const data = [
   {
     id: 3,
     title: "Testarea Echipamentelor",
-    icon: (
-      <svg
-        id="Layer_1"
-        data-name="Layer 1"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 122.84 102"
-      >
-        <path d="M65.72,0H0v102h122.84V0h-57.12ZM101.27,83.06H21.57v-23.02h79.7v23.02ZM101.27,41.09H21.57v-22.15h79.7v22.15Z" />
-      </svg>
-    ),
+    icon: Logo,
     banner: "/banner1.jpg",
     content: {
       title: "Consultanta Personalizata",
@@ -127,16 +101,7 @@ const data = [
   {
     id: 4,
     title: "Service si mentenanta",
-    icon: (
-      <svg
-        id="Layer_1"
-        data-name="Layer 1"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 122.84 102"
-      >
-        <path d="M65.72,0H0v102h122.84V0h-57.12ZM101.27,83.06H21.57v-23.02h79.7v23.02ZM101.27,41.09H21.57v-22.15h79.7v22.15Z" />
-      </svg>
-    ),
+    icon: Logo,
     banner: "/banner1.jpg",
     content: {
       title: "Consultanta Personalizata",
@@ -148,6 +113,39 @@ const data = [
         "Plan de achizitie in etape, pentru optimizarea bugetului si cresterea treptata a capacitatii operationale.",
       ],
     },
+  },
+];
+
+const data2 = [
+  {
+    title: "De ce sa ne alegi?",
+    description:
+      "Oferim servicii de calitate, adaptate fiecarui client, pentru caafacerea ta sa prospere fara intreruperi.",
+  },
+  {
+    title: "De ce sa ne alegi?",
+    description:
+      "Oferim servicii de calitate, adaptate fiecarui client, pentru caafacerea ta sa prospere fara intreruperi.",
+  },
+  {
+    title: "De ce sa ne alegi?",
+    description:
+      "Oferim servicii de calitate, adaptate fiecarui client, pentru caafacerea ta sa prospere fara intreruperi.",
+  },
+  {
+    title: "De ce sa ne alegi?",
+    description:
+      "Oferim servicii de calitate, adaptate fiecarui client, pentru caafacerea ta sa prospere fara intreruperi.",
+  },
+  {
+    title: "De ce sa ne alegi?",
+    description:
+      "Oferim servicii de calitate, adaptate fiecarui client, pentru caafacerea ta sa prospere fara intreruperi.",
+  },
+  {
+    title: "De ce sa ne alegi?",
+    description:
+      "Oferim servicii de calitate, adaptate fiecarui client, pentru caafacerea ta sa prospere fara intreruperi.",
   },
 ];
 
@@ -171,9 +169,7 @@ export default async function Services() {
               <h4 className="text-center leading-6 text-balance lg:text-lg md:leading-7">
                 La Conti Grup, ne dedicam furnizarii de solutii complete pentru
                 echiparea si intretinerea afacerilor din domeniul HORECA. De la
-                consultanta specializata si vanzare de echipamente profesionale,
-                pana la servicii de mentenanta si reparatii, ne asiguram ca
-                afacerea ta functioneaza fara intreruperi.
+                consultanta specializata si vanzare
               </h4>
             </div>
             <Button size={"lg"}>Learn more</Button>
@@ -189,17 +185,20 @@ export default async function Services() {
               className="py-2"
             >
               <CarouselContent className="ml-4 mr-6">
-                {data.map((item, index) => (
+                {data.map((item) => (
                   <CarouselItem
-                    key={index}
-                    className="basis-1/1 sm:basis-1/2 lg:basis-1/4 pl-1"
+                    key={item.id}
+                    className="basis-auto sm:basis-1/2 lg:basis-1/4 pl-1"
                   >
                     <Button
+                      asChild
                       variant={"secondary"}
                       className="w-full rounded-full h-12 text-base [&_svg:not([class*='size-'])]:size-5 hover:bg-zinc-200"
                     >
-                      {item.icon}
-                      {item.title}
+                      <a href={`#service-${item.id}`}>
+                        <item.icon />
+                        {item.title}
+                      </a>
                     </Button>
                   </CarouselItem>
                 ))}
@@ -209,7 +208,8 @@ export default async function Services() {
             {data.map((item) => (
               <div
                 key={item.id}
-                className="grid grid-cols-1 md:grid-cols-2 md:items-stretch gap-4 p-4"
+                id={`service-${item.id}`}
+                className="grid scroll-mt-24 grid-cols-1 md:grid-cols-2 md:items-stretch gap-4 p-4"
               >
                 <div
                   className={cn(
@@ -255,120 +255,20 @@ export default async function Services() {
             </TypographyP>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-            <div className="flex flex-col  gap-3 p-4 items-center">
-              <svg
-                id="Layer_1"
-                className="size-15 fill-current"
-                data-name="Layer 1"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 122.84 102"
+            {data2.map((item, index) => (
+              <div
+                key={index}
+                className="flex flex-col  gap-3 p-4 items-center"
               >
-                <path d="M65.72,0H0v102h122.84V0h-57.12ZM101.27,83.06H21.57v-23.02h79.7v23.02ZM101.27,41.09H21.57v-22.15h79.7v22.15Z" />
-              </svg>
-              <TypographyH3 className="text-center">
-                Expertiza in domeniu
-              </TypographyH3>
-              <TypographyMuted className="text-muted text-center">
-                Cu peste 10 ani de activitate, echipa noastra cunoaste in
-                profunzime provocarile din HORECA si ofera solutii testate si
-                eficiente pentru orice tip de afacere.
-              </TypographyMuted>
-            </div>
-            <div className="flex flex-col  gap-3 p-4 items-center">
-              <svg
-                id="Layer_1"
-                className="size-15 fill-current"
-                data-name="Layer 1"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 122.84 102"
-              >
-                <path d="M65.72,0H0v102h122.84V0h-57.12ZM101.27,83.06H21.57v-23.02h79.7v23.02ZM101.27,41.09H21.57v-22.15h79.7v22.15Z" />
-              </svg>
-              <TypographyH3 className="text-center">
-                Expertiza in domeniu
-              </TypographyH3>
-              <TypographyMuted className="text-muted text-center">
-                Cu peste 10 ani de activitate, echipa noastra cunoaste in
-                profunzime provocarile din HORECA si ofera solutii testate si
-                eficiente pentru orice tip de afacere.
-              </TypographyMuted>
-            </div>
-            <div className="flex flex-col  gap-3 p-4 items-center">
-              <svg
-                id="Layer_1"
-                className="size-15 fill-current"
-                data-name="Layer 1"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 122.84 102"
-              >
-                <path d="M65.72,0H0v102h122.84V0h-57.12ZM101.27,83.06H21.57v-23.02h79.7v23.02ZM101.27,41.09H21.57v-22.15h79.7v22.15Z" />
-              </svg>
-              <TypographyH3 className="text-center">
-                Expertiza in domeniu
-              </TypographyH3>
-              <TypographyMuted className="text-muted text-center">
-                Cu peste 10 ani de activitate, echipa noastra cunoaste in
-                profunzime provocarile din HORECA si ofera solutii testate si
-                eficiente pentru orice tip de afacere.
-              </TypographyMuted>
-            </div>
-            <div className="flex flex-col  gap-3 p-4 items-center">
-              <svg
-                id="Layer_1"
-                className="size-15 fill-current"
-                data-name="Layer 1"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 122.84 102"
-              >
-                <path d="M65.72,0H0v102h122.84V0h-57.12ZM101.27,83.06H21.57v-23.02h79.7v23.02ZM101.27,41.09H21.57v-22.15h79.7v22.15Z" />
-              </svg>
-              <TypographyH3 className="text-center">
-                Expertiza in domeniu
-              </TypographyH3>
-              <TypographyMuted className="text-muted text-center">
-                Cu peste 10 ani de activitate, echipa noastra cunoaste in
-                profunzime provocarile din HORECA si ofera solutii testate si
-                eficiente pentru orice tip de afacere.
-              </TypographyMuted>
-            </div>
-            <div className="flex flex-col  gap-3 p-4 items-center">
-              <svg
-                id="Layer_1"
-                className="size-15 fill-current"
-                data-name="Layer 1"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 122.84 102"
-              >
-                <path d="M65.72,0H0v102h122.84V0h-57.12ZM101.27,83.06H21.57v-23.02h79.7v23.02ZM101.27,41.09H21.57v-22.15h79.7v22.15Z" />
-              </svg>
-              <TypographyH3 className="text-center">
-                Expertiza in domeniu
-              </TypographyH3>
-              <TypographyMuted className="text-muted text-center">
-                Cu peste 10 ani de activitate, echipa noastra cunoaste in
-                profunzime provocarile din HORECA si ofera solutii testate si
-                eficiente pentru orice tip de afacere.
-              </TypographyMuted>
-            </div>
-            <div className="flex flex-col  gap-3 p-4 items-center">
-              <svg
-                id="Layer_1"
-                className="size-15 fill-current"
-                data-name="Layer 1"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 122.84 102"
-              >
-                <path d="M65.72,0H0v102h122.84V0h-57.12ZM101.27,83.06H21.57v-23.02h79.7v23.02ZM101.27,41.09H21.57v-22.15h79.7v22.15Z" />
-              </svg>
-              <TypographyH3 className="text-center">
-                Expertiza in domeniu
-              </TypographyH3>
-              <TypographyMuted className="text-muted text-center">
-                Cu peste 10 ani de activitate, echipa noastra cunoaste in
-                profunzime provocarile din HORECA si ofera solutii testate si
-                eficiente pentru orice tip de afacere.
-              </TypographyMuted>
-            </div>
+                <Logo className="size-15" />
+                <TypographyH3 className="text-center">
+                  {item.title}
+                </TypographyH3>
+                <TypographyMuted className="text-muted text-center">
+                  {item.description}
+                </TypographyMuted>
+              </div>
+            ))}
           </div>
           <div className="flex flex-col items-center p-4">
             <Button size={"lg"}>Afla mai mult</Button>
@@ -418,7 +318,10 @@ export default async function Services() {
                           <InputGroupAddon>
                             <InputGroupText>+40</InputGroupText>
                           </InputGroupAddon>
-                          <InputGroupInput className="!pl-2" />
+                          <InputGroupInput
+                            className="!pl-2"
+                            placeholder="Phone number"
+                          />
                         </InputGroup>
                       </Field>
                     </div>
