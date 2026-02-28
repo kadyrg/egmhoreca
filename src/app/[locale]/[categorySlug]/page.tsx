@@ -1,12 +1,12 @@
-import { Metadata } from "next";
-import { getTranslations, setRequestLocale } from "next-intl/server";
 import { getCategory } from "@/features/categories";
+import { ProductsList } from "@/features/products";
 import {
   getSubCategories,
   SubCategoriesSidebar,
 } from "@/features/sub-categories";
-import { ProductsList } from "@/features/products";
-import { Heading3 } from "@/shared/ui/kit/typography";
+import { TypographyH3 } from "@/shared/ui/kit/typography";
+import { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
 interface Props {
   params: Promise<{ locale: string; categorySlug: string }>;
@@ -49,7 +49,7 @@ export default async function CategoryPage({ params }: Props) {
           >
             <div className="px-5">
               <div className="max-w-[90rem] mx-auto">
-                <Heading3 className="my-3">{item.title}</Heading3>
+                <TypographyH3 className="my-3">{item.title}</TypographyH3>
               </div>
             </div>
             <ProductsList locale={locale} subCategorySlug={item.slug} />

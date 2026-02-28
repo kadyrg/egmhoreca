@@ -1,3 +1,4 @@
+import { cn } from "@/shared/lib/css";
 import { Button } from "@/shared/ui/kit/button";
 import {
   Carousel,
@@ -5,6 +6,7 @@ import {
   CarouselItem,
 } from "@/shared/ui/kit/carousel";
 import { Separator } from "@/shared/ui/kit/separator";
+import { TypographyH3, TypographyP } from "@/shared/ui/kit/typography";
 import { Home } from "lucide-react";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
@@ -24,10 +26,70 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const data = [
-  { title: "dsfdsfds", icon: Home },
-  { title: "dsfdsdsdsfds", icon: Home },
-  { title: "dsfdsfds", icon: Home },
-  { title: "dsfdsfds", icon: Home },
+  {
+    id: 1,
+    title: "Consultanta Personalizata",
+    icon: Home,
+    banner: "/banner1.jpg",
+    content: {
+      title: "Consultanta Personalizata",
+      desciption:
+        "Oferim consultanta detaliata pentru a identifica cele mai potrivite solutii pentru afacerea ta. Procesul nostru include:",
+      listItems: [
+        "Analiza si stabilirea fluxului tehnologic pentru eficienta maxima.",
+        "Dimensionarea corecta a investitiei in functie de locatie si specificul afacerii.",
+        "Plan de achizitie in etape, pentru optimizarea bugetului si cresterea treptata a capacitatii operationale.",
+      ],
+    },
+  },
+  {
+    id: 2,
+    title: "Proiectare Profesionala",
+    icon: Home,
+    banner: "/banner1.jpg",
+    content: {
+      title: "Consultanta Personalizata",
+      desciption:
+        "Oferim consultanta detaliata pentru a identifica cele mai potrivite solutii pentru afacerea ta. Procesul nostru include:",
+      listItems: [
+        "Analiza si stabilirea fluxului tehnologic pentru eficienta maxima.",
+        "Dimensionarea corecta a investitiei in functie de locatie si specificul afacerii.",
+        "Plan de achizitie in etape, pentru optimizarea bugetului si cresterea treptata a capacitatii operationale.",
+      ],
+    },
+  },
+  {
+    id: 3,
+    title: "Testarea Echipamentelor",
+    icon: Home,
+    banner: "/banner1.jpg",
+    content: {
+      title: "Consultanta Personalizata",
+      desciption:
+        "Oferim consultanta detaliata pentru a identifica cele mai potrivite solutii pentru afacerea ta. Procesul nostru include:",
+      listItems: [
+        "Analiza si stabilirea fluxului tehnologic pentru eficienta maxima.",
+        "Dimensionarea corecta a investitiei in functie de locatie si specificul afacerii.",
+        "Plan de achizitie in etape, pentru optimizarea bugetului si cresterea treptata a capacitatii operationale.",
+      ],
+    },
+  },
+  {
+    id: 4,
+    title: "Service si mentenanta",
+    icon: Home,
+    banner: "/banner1.jpg",
+    content: {
+      title: "Consultanta Personalizata",
+      desciption:
+        "Oferim consultanta detaliata pentru a identifica cele mai potrivite solutii pentru afacerea ta. Procesul nostru include:",
+      listItems: [
+        "Analiza si stabilirea fluxului tehnologic pentru eficienta maxima.",
+        "Dimensionarea corecta a investitiei in functie de locatie si specificul afacerii.",
+        "Plan de achizitie in etape, pentru optimizarea bugetului si cresterea treptata a capacitatii operationale.",
+      ],
+    },
+  },
 ];
 
 export default async function Services() {
@@ -54,12 +116,10 @@ export default async function Services() {
               afacerea ta functioneaza fara intreruperi.
             </h4>
           </div>
-          <Button size={"lg"} className=" rounded-full">
-            Learn more
-          </Button>
+          <Button size={"lg"}>Learn more</Button>
         </div>
       </section>
-      <section className="space-y-3 py-2 max-w-[88rem] mx-auto">
+      <section className="space-y-3 py-2 max-w-[90rem] mx-auto">
         <Carousel
           opts={{
             align: "start",
@@ -69,7 +129,10 @@ export default async function Services() {
         >
           <CarouselContent className="ml-4 mr-6">
             {data.map((item, index) => (
-              <CarouselItem key={index} className="basis-1/1 sm:basis-1/4 pl-1">
+              <CarouselItem
+                key={index}
+                className="basis-1/1 sm:basis-1/2 lg:basis-1/4 pl-1"
+              >
                 <Button
                   variant={"secondary"}
                   className="w-full rounded-full h-12 text-base [&_svg:not([class*='size-'])]:size-5 hover:bg-zinc-200"
@@ -82,9 +145,38 @@ export default async function Services() {
           </CarouselContent>
         </Carousel>
         <Separator className="w-full !h-0.1 bg-linear-to-r from-background via-border to-background" />
-        <div className="grid grid-cols-1 bg-accent rounded-3xl">
-          <div>fdsfds</div>
-        </div>
+        {data.map((item) => (
+          <div
+            key={item.id}
+            className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4"
+          >
+            <Image
+              className={cn(
+                "object-cover aspect-2/1 rounded-3xl",
+                item.id % 2 === 1 ? "order-1" : "order-2",
+              )}
+              src={item.banner}
+              width={1000}
+              height={500}
+              alt={""}
+            />
+            <div
+              className={cn(
+                "bg-accent rounded-3xl py-4 px-6 flex flex-col justify-center items-start",
+                item.id % 2 === 1 ? "order-2" : "order-1",
+              )}
+            >
+              <TypographyH3>{item.content.title}</TypographyH3>
+              <TypographyP>{item.content.desciption}</TypographyP>
+              <ul className="my-6 ml-6 list-disc">
+                {item.content.listItems.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+              <Button size={"lg"}>Contact</Button>
+            </div>
+          </div>
+        ))}
       </section>
     </>
   );

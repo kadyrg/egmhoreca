@@ -1,6 +1,9 @@
 import { cn } from "@/shared/lib/css";
 
-function Heading3({ className, ...props }: React.ComponentProps<"h3">) {
+export function TypographyH3({
+  className,
+  ...props
+}: React.ComponentProps<"h3">) {
   return (
     <h3
       className={cn(
@@ -12,4 +15,9 @@ function Heading3({ className, ...props }: React.ComponentProps<"h3">) {
   );
 }
 
-export { Heading3 };
+export function TypographyP({
+  className,
+  ...props
+}: React.ComponentProps<"p">) {
+  return <p className={cn("leading-7", className)} {...props} />;
+}

@@ -72,7 +72,12 @@ function ProductCard({
             {product.title}
           </div>
           <div className="font-medium sm:text-lg text-foreground/80">
-            {product.price} RON {product.oldPrice && <span className="ml-2 text-base text-sm text-muted-foreground line-through">{product.oldPrice} RON</span>}
+            {product.price} RON{" "}
+            {product.oldPrice && (
+              <span className="ml-2 text-base text-sm text-muted-foreground line-through">
+                {product.oldPrice} RON
+              </span>
+            )}
           </div>
         </div>
         <Button className="font-semibold w-full sm:w-fit sm:h-10 sm:px-6 rounded-full">

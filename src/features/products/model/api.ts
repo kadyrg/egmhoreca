@@ -33,7 +33,6 @@ export type ProductImage = {
   image: string;
 };
 
-
 export async function getProducts({
   locale,
   subCategorySlug,
