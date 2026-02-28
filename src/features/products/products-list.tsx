@@ -68,11 +68,11 @@ function ProductCard({
       />
       <div className="w-full p-[10px] sm:p-3 md:p-4 lg:p-5 gap-2 flex flex-wrap sm:flex-nowrap justify-between items-end">
         <div className="w-full overflow-hidden">
-          <div className="truncate font-bold sm:text-lg md:text-xl">
+          <div className="truncate font-medium sm:text-lg md:text-xl">
             {product.title}
           </div>
-          <div className="font-semibold sm:text-lg text-foreground/80">
-            {product.price} RON
+          <div className="font-medium sm:text-lg text-foreground/80">
+            {product.price} RON {product.oldPrice && <span className="ml-2 text-base text-sm text-muted-foreground line-through">{product.oldPrice} RON</span>}
           </div>
         </div>
         <Button className="font-semibold w-full sm:w-fit sm:h-10 sm:px-6 rounded-full">

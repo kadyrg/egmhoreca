@@ -1,12 +1,12 @@
 "use client";
 
-import React from "react";
-import Image from "next/image";
+import { ApiSchemas } from "@/shared/api/schema";
 import { Link } from "@/shared/i18n/navigation";
 import { cn } from "@/shared/lib/css";
-import { ApiSchemas } from "@/shared/api/schema";
-import { CartButton } from "./cart-button";
 import { useIsTablet } from "@/shared/lib/react/use-tablet";
+import Image from "next/image";
+import React from "react";
+import { CartButton } from "./cart-button";
 
 export function AppHeader({
   categories,
@@ -51,6 +51,12 @@ export function AppHeader({
                     {item.title}
                   </Link>
                 ))}
+                <Link
+                  href={`/services`}
+                  className="flex px-2 truncate items-center text-sm text-foreground/75 hover:text-foreground transition-all"
+                >
+                  Services
+                </Link>
               </div>
             )}
             <div className="h-full flex">
@@ -88,6 +94,7 @@ export function AppHeader({
               {categories.map((item, index) => (
                 <Link
                   key={index}
+                  onClick={() => setOpen(false)}
                   href={`/${item.slug}`}
                   style={{
                     transitionDelay: open
@@ -102,6 +109,21 @@ export function AppHeader({
                   {item.title}
                 </Link>
               ))}
+              <Link
+                onClick={() => setOpen(false)}
+                href={`/services`}
+                style={{
+                  transitionDelay: open
+                    ? `${(categories.length + 4) * 80}ms`
+                    : `${0 * 60}ms`,
+                }}
+                className={cn(
+                  "text-[26px] font-semibold transform transition-all duration-800 ease-[cubic-bezier(0.16,1,0.3,1)]",
+                  open ? "opacity-100" : "opacity-0",
+                )}
+              >
+                Services
+              </Link>
             </div>
           )}
         </div>

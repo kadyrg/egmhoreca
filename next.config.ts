@@ -11,6 +11,11 @@ const nextConfig: NextConfig = {
         port: "8000",
         pathname: "/media/**",
       },
+      {
+        protocol: "https",
+        hostname: "api.egmhoreca.ro",
+        pathname: "/media/**",
+      },
     ],
   },
 };

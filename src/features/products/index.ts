@@ -1,2 +1,3 @@
 export { ProductsList } from "./products-list";
-export { getProducts } from "./model/api";
+export { getProducts, getProductDetail } from "./model/api";
+export { ProductDetailCard } from "./product-detail-card";

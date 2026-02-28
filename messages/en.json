@@ -11,6 +11,9 @@
       "about": "About us",
       "contact": "Contact us"
     },
+    "categories": {
+      "label": "Categories"
+    },
     "legal": {
       "label": "Legal",
       "terms-of-service": "Terms of Service",
