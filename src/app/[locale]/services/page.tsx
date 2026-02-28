@@ -31,7 +31,6 @@ import {
   TypographyMuted,
   TypographyP,
 } from "@/shared/ui/kit/typography";
-import { Home } from "lucide-react";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
@@ -53,7 +52,16 @@ const data = [
   {
     id: 1,
     title: "Consultanta Personalizata",
-    icon: Home,
+    icon: (
+      <svg
+        id="Layer_1"
+        data-name="Layer 1"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 122.84 102"
+      >
+        <path d="M65.72,0H0v102h122.84V0h-57.12ZM101.27,83.06H21.57v-23.02h79.7v23.02ZM101.27,41.09H21.57v-22.15h79.7v22.15Z" />
+      </svg>
+    ),
     banner: "/banner1.jpg",
     content: {
       title: "Consultanta Personalizata",
@@ -69,7 +77,16 @@ const data = [
   {
     id: 2,
     title: "Proiectare Profesionala",
-    icon: Home,
+    icon: (
+      <svg
+        id="Layer_1"
+        data-name="Layer 1"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 122.84 102"
+      >
+        <path d="M65.72,0H0v102h122.84V0h-57.12ZM101.27,83.06H21.57v-23.02h79.7v23.02ZM101.27,41.09H21.57v-22.15h79.7v22.15Z" />
+      </svg>
+    ),
     banner: "/banner1.jpg",
     content: {
       title: "Consultanta Personalizata",
@@ -85,7 +102,16 @@ const data = [
   {
     id: 3,
     title: "Testarea Echipamentelor",
-    icon: Home,
+    icon: (
+      <svg
+        id="Layer_1"
+        data-name="Layer 1"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 122.84 102"
+      >
+        <path d="M65.72,0H0v102h122.84V0h-57.12ZM101.27,83.06H21.57v-23.02h79.7v23.02ZM101.27,41.09H21.57v-22.15h79.7v22.15Z" />
+      </svg>
+    ),
     banner: "/banner1.jpg",
     content: {
       title: "Consultanta Personalizata",
@@ -101,7 +127,16 @@ const data = [
   {
     id: 4,
     title: "Service si mentenanta",
-    icon: Home,
+    icon: (
+      <svg
+        id="Layer_1"
+        data-name="Layer 1"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 122.84 102"
+      >
+        <path d="M65.72,0H0v102h122.84V0h-57.12ZM101.27,83.06H21.57v-23.02h79.7v23.02ZM101.27,41.09H21.57v-22.15h79.7v22.15Z" />
+      </svg>
+    ),
     banner: "/banner1.jpg",
     content: {
       title: "Consultanta Personalizata",
@@ -163,7 +198,7 @@ export default async function Services() {
                       variant={"secondary"}
                       className="w-full rounded-full h-12 text-base [&_svg:not([class*='size-'])]:size-5 hover:bg-zinc-200"
                     >
-                      <item.icon />
+                      {item.icon}
                       {item.title}
                     </Button>
                   </CarouselItem>
@@ -221,7 +256,15 @@ export default async function Services() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
             <div className="flex flex-col  gap-3 p-4 items-center">
-              <Home size={60} />
+              <svg
+                id="Layer_1"
+                className="size-15 fill-current"
+                data-name="Layer 1"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 122.84 102"
+              >
+                <path d="M65.72,0H0v102h122.84V0h-57.12ZM101.27,83.06H21.57v-23.02h79.7v23.02ZM101.27,41.09H21.57v-22.15h79.7v22.15Z" />
+              </svg>
               <TypographyH3 className="text-center">
                 Expertiza in domeniu
               </TypographyH3>
@@ -232,7 +275,15 @@ export default async function Services() {
               </TypographyMuted>
             </div>
             <div className="flex flex-col  gap-3 p-4 items-center">
-              <Home size={60} />
+              <svg
+                id="Layer_1"
+                className="size-15 fill-current"
+                data-name="Layer 1"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 122.84 102"
+              >
+                <path d="M65.72,0H0v102h122.84V0h-57.12ZM101.27,83.06H21.57v-23.02h79.7v23.02ZM101.27,41.09H21.57v-22.15h79.7v22.15Z" />
+              </svg>
               <TypographyH3 className="text-center">
                 Expertiza in domeniu
               </TypographyH3>
@@ -243,7 +294,15 @@ export default async function Services() {
               </TypographyMuted>
             </div>
             <div className="flex flex-col  gap-3 p-4 items-center">
-              <Home size={60} />
+              <svg
+                id="Layer_1"
+                className="size-15 fill-current"
+                data-name="Layer 1"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 122.84 102"
+              >
+                <path d="M65.72,0H0v102h122.84V0h-57.12ZM101.27,83.06H21.57v-23.02h79.7v23.02ZM101.27,41.09H21.57v-22.15h79.7v22.15Z" />
+              </svg>
               <TypographyH3 className="text-center">
                 Expertiza in domeniu
               </TypographyH3>
@@ -254,7 +313,15 @@ export default async function Services() {
               </TypographyMuted>
             </div>
             <div className="flex flex-col  gap-3 p-4 items-center">
-              <Home size={60} />
+              <svg
+                id="Layer_1"
+                className="size-15 fill-current"
+                data-name="Layer 1"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 122.84 102"
+              >
+                <path d="M65.72,0H0v102h122.84V0h-57.12ZM101.27,83.06H21.57v-23.02h79.7v23.02ZM101.27,41.09H21.57v-22.15h79.7v22.15Z" />
+              </svg>
               <TypographyH3 className="text-center">
                 Expertiza in domeniu
               </TypographyH3>
@@ -265,7 +332,15 @@ export default async function Services() {
               </TypographyMuted>
             </div>
             <div className="flex flex-col  gap-3 p-4 items-center">
-              <Home size={60} />
+              <svg
+                id="Layer_1"
+                className="size-15 fill-current"
+                data-name="Layer 1"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 122.84 102"
+              >
+                <path d="M65.72,0H0v102h122.84V0h-57.12ZM101.27,83.06H21.57v-23.02h79.7v23.02ZM101.27,41.09H21.57v-22.15h79.7v22.15Z" />
+              </svg>
               <TypographyH3 className="text-center">
                 Expertiza in domeniu
               </TypographyH3>
@@ -276,7 +351,15 @@ export default async function Services() {
               </TypographyMuted>
             </div>
             <div className="flex flex-col  gap-3 p-4 items-center">
-              <Home size={60} />
+              <svg
+                id="Layer_1"
+                className="size-15 fill-current"
+                data-name="Layer 1"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 122.84 102"
+              >
+                <path d="M65.72,0H0v102h122.84V0h-57.12ZM101.27,83.06H21.57v-23.02h79.7v23.02ZM101.27,41.09H21.57v-22.15h79.7v22.15Z" />
+              </svg>
               <TypographyH3 className="text-center">
                 Expertiza in domeniu
               </TypographyH3>
