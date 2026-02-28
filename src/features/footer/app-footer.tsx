@@ -29,7 +29,7 @@ export async function AppFooter() {
   ];
 
   return (
-    <footer className="dark px-5 bg-background text-foreground">
+    <footer className="dark px-5 bg-background text-foreground relative z-10">
       <div className="max-w-7xl mx-auto pt-4">
         <div className="flex flex-wrap gap-12 justify-between py-6">
           {data.map((item, index) => (
