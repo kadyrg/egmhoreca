@@ -25,7 +25,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 const data = [
   { title: "dsfdsfds", icon: Home },
-  { title: "dsfdsfds", icon: Home },
+  { title: "dsfdsdsdsfds", icon: Home },
   { title: "dsfdsfds", icon: Home },
   { title: "dsfdsfds", icon: Home },
 ];
